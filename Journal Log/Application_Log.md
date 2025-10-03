@@ -13,8 +13,8 @@ TEMPLATE: DO NOT DELETE
 ## 🗓️ [Date: 2025-10-03]
 **Name:** [Mahathir] 
 **Description:**  
-- [Github repo was established
-- Folders for Papers, Data, Application Log, and ReadMe established]
+- Github repo was established
+- Folders for Papers, Data, Application Log, and ReadMe established
   
 ---
 
