@@ -8,11 +8,11 @@ The project focuses on **{insert here}**.
 
 ---
 
-## 🚀 Features
-- [Feature 1 – insert short explanation]
-- [Feature 2 – insert short explanation]
-- [Feature 3 – insert short explanation]
-
+## 🚀 Group Members
+- Mahathir Khan
+- Aman Mulla
+- Sofia Kaplan
+- Kelechi Ejiofor 
 ---
 
 ## 🗂️ Repository Structure
