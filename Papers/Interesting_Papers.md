@@ -1,5 +1,9 @@
 # 📑 Interesting Papers
 
+TEMPLATE: DO NOT DELETE
+0. [insert Paper title](insert_link)  
+   *{insert description}*
+
 1. [Genetic correlations between Alzheimer's disease and gut microbiome genera](https://pubmed.ncbi.nlm.nih.gov/37002253/)  
    *Looks at correlations between microbial composition and neurodegeneration.*
 
