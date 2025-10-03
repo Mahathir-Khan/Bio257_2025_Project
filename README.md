@@ -21,4 +21,3 @@ The project focuses on **{insert here}**.
 - [Packages - Potential analysis packages for projects]
 - [Code - Updated and tracked in Journal Log]
 - [Journal Log - Chronologically ordered log of events and updates to project repository]
-- 
