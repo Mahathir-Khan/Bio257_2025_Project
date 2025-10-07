@@ -18,3 +18,8 @@ TEMPLATE: DO NOT DELETE
   
 ---
 
+## 🗓️ [Date: 2025-10-07]
+**Name:** [Mahathir] 
+**Description:**  
+- Added Group Agreement pdf to front page of repo
+- Added Project outline to repo main thread
