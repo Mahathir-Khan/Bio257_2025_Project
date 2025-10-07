@@ -23,3 +23,7 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Added Group Agreement pdf to front page of repo
 - Added Project outline to repo main thread
+- **Name:** [Aman] 
+**Description:**  
+- Created template of outline
+- Hunted for literature and relevant datasets
