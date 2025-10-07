@@ -4,7 +4,8 @@
 
 ## 📖 Overview
 This repo contains materials and journal log for **BIO 257: Applied Genomics Group 4**, completed during **Fall 2025**.  
-Link to Project planning padlet: https://rochester.padlet.org/amandalarracuente1/group4-2025-jlw189f5kh6crg0b
+Link to Project planning padlet: https://rochester.padlet.org/amandalarracuente1/group4-2025-jlw189f5kh6crg0b 
+
 The project focuses on **{insert here}**.
 
 ---
