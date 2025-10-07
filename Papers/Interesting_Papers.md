@@ -15,3 +15,9 @@ TEMPLATE: DO NOT DELETE
 ## Database Review Papers
 1. for microbiome (16S) : https://www.sciencedirect.com/science/article/pii/S0024320523007671?via%3Dihub
 2. for differential gene expression in cell types (RNAseq): https://www.nature.com/articles/s41598-018-27293-5/tables/1
+
+## Example analyses
+1. for microbiome (16S): https://pmc.ncbi.nlm.nih.gov/articles/PMC11338931/
+2. for differential gene expression (RNAseq): https://www.nature.com/articles/s41598-018-27293-5
+
+   
