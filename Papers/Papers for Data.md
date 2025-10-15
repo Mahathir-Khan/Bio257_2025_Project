@@ -1,11 +1,9 @@
 # 📑 Papers for Databases
 
 TEMPLATE: DO NOT DELETE
-0. [A survey of human brain transcriptome diversity at the single cell level]((https://www.pnas.org/doi/full/10.1073/pnas.1507125112))  
-   *{Database for Single cell RNA seq in human AD vs normal controls}*
 
-1. [Genetic correlations between Alzheimer's disease and gut microbiome genera](https://pubmed.ncbi.nlm.nih.gov/37002253/)  
-   *Looks at correlations between microbial composition and neurodegeneration.*
+1. [A survey of human brain transcriptome diversity at the single cell level](https://www.pnas.org/doi/full/10.1073/pnas.1507125112)  
+   *Database for Single cell RNA seq in human AD vs normal controls*
 
 2. [The role of the gut microbiome in astrocyte regulation in Alzheimer’s disease](https://pmc.ncbi.nlm.nih.gov/articles/PMCXXXXXX/)  
    *Discusses astrocyte–microbiome interactions in pathology.*
