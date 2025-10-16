@@ -27,3 +27,7 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Created template of outline
 - Hunted for literature and relevant datasets
+- **Name:** [Kelechi] 
+**Description:**  
+- Made goals for our meeting on sunday
+- Litertaure Review.
