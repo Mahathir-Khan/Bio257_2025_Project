@@ -4,10 +4,10 @@ This log tracks updates and changes made to the repository. Each entry correspon
 
 ---
 TEMPLATE: DO NOT DELETE
-## 🗓️ [Date: YYYY-MM-DD]
-**Name:** [insert name] 
+## 🗓️ [Date: 2025-10-14]
+**Name:** [Sofia Kaplan] 
 **Description:**  
-- [Brief description of what was changed, added, or fixed]
+- [I added data files for the 16s (Emery et al. 2017) and single cell RNA seq data and determined which studies we will be using (Darmanis et al. 2015)]
   
 ---
 ## 🗓️ [Date: 2025-10-03]
