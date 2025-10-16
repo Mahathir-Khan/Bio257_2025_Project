@@ -23,11 +23,24 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Added Group Agreement pdf to front page of repo
 - Added Project outline to repo main thread
-- **Name:** [Aman] 
+**Name:** [Aman] 
 **Description:**  
 - Created template of outline
 - Hunted for literature and relevant datasets
-- **Name:** [Kelechi] 
+
+
+---
+
+## 🗓️ [Date: 2025-10-16]
+**Name:** [Mahathir] 
+**Description:**  
+
+**Name:** [Aman] 
+**Description:**  
+- Read papers (2) of dataset
+    - Report findings
+- Dig through for pac, umap, tsne
+**Name:** [Kelechi] 
 **Description:**  
 - Made goals for our meeting on sunday
 - Litertaure Review.
