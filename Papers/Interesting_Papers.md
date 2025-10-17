@@ -18,18 +18,18 @@ TEMPLATE: DO NOT DELETE
 
 ## Study options
 ###  16S Study options: 
-Khedr et al., 2022; Egypt: https://pubmed.ncbi.nlm.nih.gov/35754271/
-Li et al., 2019; China: https://pmc.ncbi.nlm.nih.gov/articles/PMC11338931/#B38
-Zhuang et al., 2018; China
+1. Khedr et al., 2022; Egypt: https://pubmed.ncbi.nlm.nih.gov/35754271/
+2. Li et al., 2019; China: https://pmc.ncbi.nlm.nih.gov/articles/PMC11338931/#B38
+3. Zhuang et al., 2018; China
 https://pubmed.ncbi.nlm.nih.gov/29758946/
-Ling et al., 2020; China
+4. Ling et al., 2020; China
 https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2020.634069/full
-Emery et al. 2017 Data in supplementary material
+5. Emery et al. 2017 Data in supplementary material
 https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full#supplementary-material
 
 
 ### Single cell RNA seq options
-Darmanis Human Single-cell GSE67835 https://www.pnas.org/doi/full/10.1073/pnas.1507125112
+1. Darmanis Human Single-cell GSE67835 https://www.pnas.org/doi/full/10.1073/pnas.1507125112
 The data reported in this paper have been deposited in the Gene Expression Omnibus (GEO) database, www.ncbi.nlm.nih.gov/geo (accession no. GSE67835).
 
 
