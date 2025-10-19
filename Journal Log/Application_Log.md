@@ -4,12 +4,7 @@ This log tracks updates and changes made to the repository. Each entry correspon
 
 ---
 TEMPLATE: DO NOT DELETE
-## 🗓️ [Date: 2025-10-14]
-**Name:** [Sofia Kaplan] 
-**Description:**  
-- [I added data files for the 16s (Emery et al. 2017) and single cell RNA seq data and determined which studies we will be using (Darmanis et al. 2015)]
-  
----
+
 ## 🗓️ [Date: 2025-10-03]
 **Name:** [Mahathir] 
 **Description:**  
@@ -30,9 +25,16 @@ TEMPLATE: DO NOT DELETE
 
 
 ---
+## 🗓️ [Date: 2025-10-14]
+**Name:** [Sofia Kaplan] 
+**Description:**  
+- [I added data files for the 16s (Emery et al. 2017) and single cell RNA seq data and determined which studies we will be using (Darmanis et al. 2015)]
+
+---
 
 ## 🗓️ [Date: 2025-10-16]
 **Name:** [Mahathir] 
+
 **Description:**  
 
 **Name:** [Aman] 
@@ -44,3 +46,10 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Made goals for our meeting on sunday
 - Litertaure Review.
+
+## 🗓️ [Date: 2025-10-18]
+**Name:** [Sofia] 
+**Description:**  
+- Updated single cell RNA seq paper to Wang et al 2024 and added databases to Papers for Data (corrected to include AD vs control data)
+  
+---
