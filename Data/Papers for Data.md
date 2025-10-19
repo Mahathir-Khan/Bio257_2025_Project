@@ -8,7 +8,7 @@ TEMPLATE: DO NOT DELET
 
 
    *Database for Single cell RNA seq in human AD vs normal controls*
-3. [16S rRNA Next Generation Sequencing Analysis Shows Bacteria in Alzheimer’s Post-Mortem Brain](https://www.pnas.org/doi/full/10.1073/pnas.1507125112](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full#supplementary-material))  
+3. [16S rRNA Next Generation Sequencing Analysis Shows Bacteria in Alzheimer’s Post-Mortem Brain]([https://www.pnas.org/doi/full/10.1073/pnas.1507125112](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full#supplementary-material](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full)))  
    *Database for 16s seq in human AD vs normal control.*
 
 
