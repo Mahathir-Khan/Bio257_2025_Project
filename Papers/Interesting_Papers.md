@@ -37,5 +37,6 @@ The data reported in this paper have been deposited in the Gene Expression Omnib
 ## Example analyses
 1. for microbiome (16S): https://pmc.ncbi.nlm.nih.gov/articles/PMC11338931/
 2. for differential gene expression (RNAseq): https://www.nature.com/articles/s41598-018-27293-5
+3. For phylogenetic analyses workflow via Bioconductor: https://f1000research.com/articles/5-1492/v1
 
    
