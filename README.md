@@ -1,4 +1,4 @@
-# 📘 [BIO 257: Applied Genomics] — [Think with your Gut: Analysis of Gut-Brain Axis Taxa ]
+# 📘 [BIO 257: Applied Genomics] — [Think with your Gut: Linking Microbiome Phylogenetics to Brain Cell Regulation in Alzheimer's Disease]
 
 ---
 
