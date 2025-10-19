@@ -11,5 +11,5 @@ TEMPLATE: DO NOT DELET
 3. [16S rRNA Next Generation Sequencing Analysis Shows Bacteria in Alzheimer’s Post-Mortem Brain]([https://www.pnas.org/doi/full/10.1073/pnas.1507125112](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full#supplementary-material](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2017.00195/full))  
    *Database for 16s seq in human AD vs normal control.*
 
-
-   
+4. Gut microbiota distinguishes aging hispanics with Alzheimer’s disease: associations with cognitive impairment and severity (https://www.nature.com/articles/s41598-025-13262-2#data-availability)
+   Link to data set (https://www.ebi.ac.uk/ena/browser/view/PRJEB86129)
