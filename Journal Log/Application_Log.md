@@ -51,5 +51,15 @@ TEMPLATE: DO NOT DELETE
 **Name:** [Sofia] 
 **Description:**  
 - Updated single cell RNA seq paper to Wang et al 2024 and added databases to Papers for Data (corrected to include AD vs control data)
+
+## 🗓️ [Date: 2025-10-19]
+**Name:** [Mahahthir] 
+**Description:**  
+- Found papers for PhyloSeq Workflow. Now identifying interesting graphics to generate and intends to complete phylogenetic analysis within 2 weeks.
+- graphics of interest are: histogram of dominant taxa, heatmap of samples vs taxa, phylogenetic tree
+
+**Name:** [Mahahthir, Aman, Sofia, Kaycee] 
+**Description:**  
+- Had weekly team meeting to discuss project updates and perform a literature review
   
 ---
