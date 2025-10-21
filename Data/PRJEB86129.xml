@@ -1,0 +1,48 @@
+<PROJECT_SET>
+<PROJECT accession="PRJEB86129" alias="qiita_sid_14626" center_name="University of California San Diego Microbiome Initiative">
+  <IDENTIFIERS>
+    <PRIMARY_ID>PRJEB86129</PRIMARY_ID>
+    <SECONDARY_ID>ERP169503</SECONDARY_ID>
+    <SUBMITTER_ID namespace="University of California San Diego Microbiome Initiative">qiita_sid_14626</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Association of gut and oral microbiome with Alzheimer's disease in Puerto Ricans</TITLE>
+  <DESCRIPTION>The most common cause of dementia, Alzheimer’s disease (AD), is increasing worldwide and Puerto Ricans have the highest disease and mortality rates compared to other ethnicities. This study explores the gut and oral microbiome composition associated to AD in Hispanics and its relation to APOE variant expression. A better understanding of the gut oral microbiomes composition and structure in high-risk Puerto Rican patients with AD will be an invaluable approach for the future development of gut microbiota-associated diagnostic biomarkers and modulation-based therapeutic interventions.</DESCRIPTION>
+  <SUBMISSION_PROJECT>
+    <SEQUENCING_PROJECT/>
+  </SUBMISSION_PROJECT>
+  <PROJECT_LINKS>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA31172485</ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB86129&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+    <PROJECT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB86129&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </PROJECT_LINK>
+  </PROJECT_LINKS>
+  <PROJECT_ATTRIBUTES>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-STATUS-ID</TAG>
+      <VALUE>4</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-FIRST-PUBLIC</TAG>
+      <VALUE>2025-02-24</VALUE>
+    </PROJECT_ATTRIBUTE>
+    <PROJECT_ATTRIBUTE>
+      <TAG>ENA-LAST-UPDATE</TAG>
+      <VALUE>2025-02-24</VALUE>
+    </PROJECT_ATTRIBUTE>
+  </PROJECT_ATTRIBUTES>
+</PROJECT>
+</PROJECT_SET>
