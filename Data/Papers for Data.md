@@ -3,7 +3,8 @@
 TEMPLATE: DO NOT DELETE
 
 1. [	Single cell RNA sequencing analysis of human Alzheimer’s disease brain samples reveal neuronal and glial specific cells differential expression](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE175814])
-2. [A single-cell and spatial RNA-seq database for Alzheimer’s disease (ssREAD)]())
+   - GEO accession number: GSE175814
+3. [A single-cell and spatial RNA-seq database for Alzheimer’s disease (ssREAD)]())
   - LINK TO DATA: https://www.synapse.org/Synapse:syn21261143
   - LINK TO ssREAD database: [https://bmblx.bmi.osumc.edu/ssread/singlecell](https://bmblx.bmi.osumc.edu/ssread/downloads)
 
