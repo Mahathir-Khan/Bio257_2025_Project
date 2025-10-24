@@ -2,8 +2,8 @@
 
 TEMPLATE: DO NOT DELETE
 
-1. [	Single cell RNA sequencing analysis of human Alzheimer’s disease brain samples reveal neuronal and glial specific cells differential expression](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE175814])
-   - GEO accession number: GSE175814
+1. [Insulin and serine metabolism as sex-specific hallmarks of Alzheimer’s disease in the human hippocampus]([https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE175814](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA739253)])
+   - Link to data: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA739253
 3. [A single-cell and spatial RNA-seq database for Alzheimer’s disease (ssREAD)]())
   - LINK TO DATA: https://www.synapse.org/Synapse:syn21261143
   - LINK TO ssREAD database: [https://bmblx.bmi.osumc.edu/ssread/singlecell](https://bmblx.bmi.osumc.edu/ssread/downloads)
