@@ -63,3 +63,12 @@ TEMPLATE: DO NOT DELETE
 - Had weekly team meeting to discuss project updates and perform a literature review
   
 ---
+
+## 🗓️ [Date: 2025-10-24]
+**Name:** [Sofia] 
+**Description:**  
+- Found new paper for RNA-seq data Maffioli E et al. 2022.
+- Downloaded and converted as fastq files.
+
+---
+
