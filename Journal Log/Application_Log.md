@@ -68,7 +68,7 @@ TEMPLATE: DO NOT DELETE
 **Name:** [Sofia] 
 **Description:**  
 - Found new paper for RNA-seq data Maffioli E et al. 2022.
-- Downloaded and converted as fastq files.
+- Downloaded data to bluehive and converted as fastq files.
 
 ---
 
