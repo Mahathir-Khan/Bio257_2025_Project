@@ -70,5 +70,16 @@ TEMPLATE: DO NOT DELETE
 - Found new paper for RNA-seq data Maffioli E et al. 2022.
 - Downloaded data to bluehive and converted as fastq files.
 
+## 🗓️ [Date: 2025-10-23]
+**Name:** [Aman] 
+**Description:**  
+- Began looking for pipelines for 16s RNA and bulk RNA-seq data
+- Outlined Presentation 
 ---
 
+## 🗓️ [Date: 2025-10-31]
+**Name:** [Aman] 
+**Description:**  
+- Constructed DADA2 pipeline as an alternative to 16s RNA fastq file pre-processing
+
+---
