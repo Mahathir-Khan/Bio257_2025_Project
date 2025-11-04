@@ -30,6 +30,8 @@ https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2
 
 6.https://www.nature.com/articles/s41598-017-13601-y#Sec15
 
+     
+
 
 ### Single cell RNA seq options
 1. Darmanis Human Single-cell GSE67835 https://www.pnas.org/doi/full/10.1073/pnas.1507125112
@@ -38,7 +40,8 @@ The data reported in this paper have been deposited in the Gene Expression Omnib
 
 ## Example analyses
 1. for microbiome (16S): https://pmc.ncbi.nlm.nih.gov/articles/PMC11338931/
-2. for differential gene expression (RNAseq): https://www.nature.com/articles/s41598-018-27293-5
-3. For phylogenetic analyses workflow via Bioconductor: https://f1000research.com/articles/5-1492/v1
+  
+3. for differential gene expression (RNAseq): https://www.nature.com/articles/s41598-018-27293-5
+4. For phylogenetic analyses workflow via Bioconductor: https://f1000research.com/articles/5-1492/v1
 
    
