@@ -1,4 +1,4 @@
-# 📑 Interesting Papers
+# Papers
 
 TEMPLATE: DO NOT DELETE
 0. [insert Paper title](insert_link)  
