@@ -83,3 +83,8 @@ TEMPLATE: DO NOT DELETE
 - Constructed DADA2 pipeline as an alternative to 16s RNA fastq file pre-processing
 
 ---
+## 🗓️ [Date: 2025-11-7]
+**Name:** [Aman] 
+**Description:**  
+- Redownloaded dataset and adjusting pipeline due to initial formatting mishaps with 16s data
+---
