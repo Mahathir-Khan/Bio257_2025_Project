@@ -104,6 +104,12 @@ intend to perform.
 **Name:** [Aman] 
 **Description:**  
 - Redownloaded dataset and adjusting pipeline due to initial formatting mishaps with 16s data
+  - Downloaded incorrect reverse fastq sequences as database did not clearly indicate forward vs reverse reads
+  - Database also updated so only contains 16s data
+    - Concerned may have been error with previous data, so redownloaded just in case
+- Downloaded bash script from database with series of wget commands to import fastq files
+  - wget commands incorrectly written so corrected locally before sending file to bluehive
+  - ran bash script to import all files to bluehive
 
 **Name:** [Mahathir]
 **Description:**
