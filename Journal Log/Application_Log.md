@@ -33,9 +33,6 @@ TEMPLATE: DO NOT DELETE
 ---
 
 ## 🗓️ [Date: 2025-10-16]
-**Name:** [Mahathir] 
-
-**Description:**  
 
 **Name:** [Aman] 
 **Description:**  
@@ -51,6 +48,12 @@ TEMPLATE: DO NOT DELETE
 **Name:** [Sofia] 
 **Description:**  
 - Updated single cell RNA seq paper to Wang et al 2024 and added databases to Papers for Data (corrected to include AD vs control data)
+
+**Name:** [Mahathir]
+**Description:**
+- Set up the project notebook and am reading up on literature for the phylogenetic analysis we
+intend to perform.
+- Hope to have specific libraries and methods ready by next week
 
 ## 🗓️ [Date: 2025-10-19]
 **Name:** [Mahahthir] 
@@ -70,6 +73,14 @@ TEMPLATE: DO NOT DELETE
 - Found new paper for RNA-seq data Maffioli E et al. 2022.
 - Downloaded data to bluehive and converted as fastq files.
 
+**Name:** [Mahathir]
+**Description:**
+- contributed to the outline
+- Helped search for new datasets
+- Accumulated accession numbers for RNAseq data to be uploaded to bluehive
+- Read into statistical tests
+- Swapped analysis priorities with Aman. Moving forward, I will focus on bulk RNAseq analysis with Sofia, while Aman and Kalechi focus on 16s phylogenetic analysis.
+
 ## 🗓️ [Date: 2025-10-23]
 **Name:** [Aman] 
 **Description:**  
@@ -82,11 +93,27 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Constructed DADA2 pipeline as an alternative to 16s RNA fastq file pre-processing
 
+**Name:** [Mahathir]
+**Description:**
+- Finalized reference genome selection
+- Begin writing trimming script for paired-end reads. Will consult with TAs regarding appropriate memory usage before running the script.
+- Presented proposal to class and did my portion of the slide deck
+
 ---
 ## 🗓️ [Date: 2025-11-7]
 **Name:** [Aman] 
 **Description:**  
 - Redownloaded dataset and adjusting pipeline due to initial formatting mishaps with 16s data
+
+**Name:** [Mahathir]
+**Description:**
+- Clean github to consolidate all datasets and accession numbers into one folder in data directory titled Final_Data_Selections
+- Clean through references and compile in papers fold in md file titled References_master_list
+- Complete script for trimming RNAseq data at phred 20
+- Script took roughly 6 hours to run using 32 gb memory and outputted trimmed files into Bluehive directory labeled trimmed_fastq_for_RNAseq
+- Awaiting quality check of trimmed RNA by Sofia and will then proceed with
+pseudomapping to transcriptome with Salmon
+- Cleaned up Application Log and submitted Journal Discussion Questions 
 ---
 ## 🗓️ [Date: 2025-11-9]
 **Name:** [Sofia] 
