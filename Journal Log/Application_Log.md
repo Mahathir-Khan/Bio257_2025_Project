@@ -88,3 +88,8 @@ TEMPLATE: DO NOT DELETE
 **Description:**  
 - Redownloaded dataset and adjusting pipeline due to initial formatting mishaps with 16s data
 ---
+## 🗓️ [Date: 2025-11-9]
+**Name:** [Sofia] 
+**Description:**  
+ - Finished generating FastQC reports and created a table of the trimming reports.
+---
