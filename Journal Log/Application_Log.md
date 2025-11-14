@@ -124,5 +124,12 @@ pseudomapping to transcriptome with Salmon
 ## 🗓️ [Date: 2025-11-9]
 **Name:** [Sofia] 
 **Description:**  
- - Finished generating FastQC reports and created a table of the trimming reports.
+ - Finished generating FastQC reports and created a table of the trimming reports. File uploaded under Data as https://github.com/Mahathir-Khan/Bio257_2025_Project/blob/main/Data/trimming_summary_phred20.tsv
 ---
+
+## 🗓️ [Date: 2025-11-14]
+**Name:** [Sofia] 
+**Description:**  
+ - Uploaded ssREAD data to bluehive under /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/ssread/ssread_files.  
+---
+
