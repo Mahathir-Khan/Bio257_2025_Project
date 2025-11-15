@@ -125,11 +125,26 @@ pseudomapping to transcriptome with Salmon
 **Name:** [Sofia] 
 **Description:**  
  - Finished generating FastQC reports and created a table of the trimming reports. File uploaded under Data as https://github.com/Mahathir-Khan/Bio257_2025_Project/blob/main/Data/trimming_summary_phred20.tsv
+   
+**Name:** [Aman] 
+**Description:**  
+- Corrected pipeline to trim and filter fastq data
+  - Removed Chimeras
+  - Calculated error rates across reads
+- Processed files into ASV format to prepare for additional processing with vegan and phyloseq
 ---
 
 ## 🗓️ [Date: 2025-11-14]
 **Name:** [Sofia] 
 **Description:**  
- - Uploaded ssREAD data to bluehive under /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/ssread/ssread_files.  
+ - Uploaded ssREAD data to bluehive under /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/ssread/ssread_files.
+---
+
+**Name:** [Aman] 
+**Description:**  
+- Helped Kaycee to prepare 16s data analysis pipeline
+- ASV did not contain arm information (control or AD)
+  - Manually created tsv file containing arm assignments associated with each accession number
+  - Merged arm assignment info into ASV
 ---
 
