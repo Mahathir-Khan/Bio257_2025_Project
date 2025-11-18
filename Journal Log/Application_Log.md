@@ -148,3 +148,8 @@ pseudomapping to transcriptome with Salmon
   - Merged arm assignment info into ASV
 ---
 
+## 🗓️ [Date: 2025-11-18]
+**Name:** [Aman] 
+**Description:**  
+- Downloaded git directory associated with ssread data processing
+---
