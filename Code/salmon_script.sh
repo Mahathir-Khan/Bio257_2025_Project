@@ -3,20 +3,23 @@
 #SBATCH -p standard
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 8
-#SBATCH --mem 32000mb
+#SBATCH --cpus-per-task 28
+#SBATCH --mem 64000mb
 #SBATCH --time=16:00:00
 #SBATCH --mail-user=mkhan35@ur.rochester.edu
 #SBATCH --mail-type=END,FAIL
 
 module load salmon
-salmon index -t /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/GRCh38_and_decoys.fa.gz -d /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/decoys.txt -p 30 -i /scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/GRCh38_salmon_index --gencode
 
 # Path to the Salmon index
 salmon_index="/scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/GRCh38_salmon_index"
 
 # Set the path to the "fastq" folder
 fastq_dir="/scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/trimmed_fastq_for_RNAseq"
+
+# set output directory
+outdir="/scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data"
+mkdir -p "$outdir"
 
 # Loop through all the directories within the "fastq" folder
 for dir in "${fastq_dir}"/SRR*; do
@@ -27,11 +30,12 @@ for dir in "${fastq_dir}"/SRR*; do
     # Extract the sample name
     samp=$(basename "$dir")
 
-    echo "Processing sample ${samp}"
     salmon quant -i "$salmon_index" -l A \
         -1 "$r1_file" \
         -2 "$r2_file" \
-        -p 28 --validateMappings -o "salmon_out/${samp}_quant"
+        -p 28 \
+        --validateMappings \
+        -o "${outdir}/${samp}_quant"
 done
 
 echo "finished all 12"
