@@ -150,8 +150,8 @@ pseudomapping to transcriptome with Salmon
 
 **Name:** [Mahathir] 
 **Description:**  
-- downloaded human reference assembly into bluehive, and converted to fa.gz file
-- organized bluehive file structure, creating new directories for salmon outputs
+- Downloaded human reference assembly into bluehive, and converted to fa.gz file
+- Organized bluehive file structure, creating new directories for salmon outputs
 - Begin writing script for Salmon transcriptome alignment
 
 ## 🗓️ [Date: 2025-11-18]
@@ -164,6 +164,7 @@ pseudomapping to transcriptome with Salmon
 **Name:** [Mahathir] 
 **Description:**  
 - Generated salmon index using salmon index.sh (in code directory)
-- ran salmon script and obtain quant files for all 12 samples with salmon_script.sh (in code directory)
+- Ran salmon script and obtain quant files for all 12 samples with salmon_script.sh (in code directory)
 - Proceeded with differential expression analysis of quant information in Salmon_Analysis.Rmd (in code directory)
-- Produced downregulated_genes_AD_vs_Control.csv and upregulated_genes_AD_vs_Control.csv (in data folder)
+- Produced downregulated_genes_AD_vs_Control.csv (in data folder)
+- Produced upregulated_genes_AD_vs_Control.csv (in data folder)
