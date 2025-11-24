@@ -148,8 +148,22 @@ pseudomapping to transcriptome with Salmon
   - Merged arm assignment info into ASV
 ---
 
+**Name:** [Mahathir] 
+**Description:**  
+- downloaded human reference assembly into bluehive, and converted to fa.gz file
+- organized bluehive file structure, creating new directories for salmon outputs
+- Begin writing script for Salmon transcriptome alignment
+
 ## 🗓️ [Date: 2025-11-18]
 **Name:** [Aman] 
 **Description:**  
 - Downloaded git directory associated with ssread data processing
 ---
+
+## 🗓️ [Date: 2025-11-23]
+**Name:** [Mahathir] 
+**Description:**  
+- Generated salmon index using salmon index.sh (in code directory)
+- ran salmon script and obtain quant files for all 12 samples with salmon_script.sh (in code directory)
+- Proceeded with differential expression analysis of quant information in Salmon_Analysis.Rmd (in code directory)
+- Produced downregulated_genes_AD_vs_Control.csv and upregulated_genes_AD_vs_Control.csv (in data folder)
