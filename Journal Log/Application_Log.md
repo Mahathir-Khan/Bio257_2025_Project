@@ -168,3 +168,10 @@ pseudomapping to transcriptome with Salmon
 - Proceeded with differential expression analysis of quant information in Salmon_Analysis.Rmd (in code directory)
 - Produced downregulated_genes_AD_vs_Control.csv (in data folder)
 - Produced upregulated_genes_AD_vs_Control.csv (in data folder)
+---
+
+- ## 🗓️ [Date: 2025-11-18]
+**Name:** [Aman] 
+**Description:**  
+- Assisted Sofia in debugging ssRead pipeline
+- Began outlining poster
