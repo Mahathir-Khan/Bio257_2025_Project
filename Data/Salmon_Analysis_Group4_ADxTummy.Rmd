@@ -1,0 +1,180 @@
+---
+title: "Salmon_Analysis_Group4_ADxTummy"
+output: html_document
+date: "2025-11-20"
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(tximport)
+library(ensembldb)
+library(AnnotationHub)
+library(DESeq2)
+```
+
+```{r}
+hub = AnnotationHub()
+```
+
+```{r}
+#make sure to use the right species
+ensdb_query <- query(hub, c("EnsDb", "sapiens", "109"))
+ensdb_query
+```
+
+```{r}
+ensdb_109 <- ensdb_query[['AH109606']]
+```
+
+```{r}
+# Extract transcript and gene information
+tx_data <- transcripts(ensdb_109,
+                       columns = c("tx_id", "gene_id"),
+                       return.type = "DataFrame")
+
+tx2gene <- as.data.frame(tx_data)[, c("tx_id", "gene_id")]
+tx2gene
+
+# Gene-level annotation table
+gene_data <- genes(ensdb_109,
+                   columns = c("gene_id", "gene_name"),
+                   return.type = "DataFrame")
+
+gene_annot <- as.data.frame(gene_data)[, c("gene_id", "gene_name")]  # keep just what we need
+gene_annot <- unique(gene_annot)  # remove any duplicates
+
+```
+
+
+
+
+```{r}
+quants_dir <- "C:/Users/mahat/OneDrive/Desktop/salmon_quants/"
+
+quant_files <- list.files(quants_dir, pattern = "quant.sf$", recursive = TRUE, full.names = TRUE)
+
+quant_dirs <- list.files(quants_dir, pattern = "_quant$", full.names = TRUE)
+sample_names <- gsub("_quant$", "", basename(quant_dirs))
+
+names(quant_files) <- sample_names
+
+quant_files
+```
+
+
+```{r}
+txi <- tximport(quant_files, type = "salmon", tx2gene = tx2gene,ignoreTxVersion = TRUE)
+```
+
+
+```{r}
+txi$counts
+sample_names
+```
+
+
+
+```{r}
+condition <- factor(c("AD","AD","AD","AD","AD","Control","Control","Control","AD","AD","Control","Control"))
+levels = c("Control", "AD") 
+coldata <- data.frame(row.names = sample_names, condition)
+coldata
+```
+
+
+```{r}
+dds <- DESeqDataSetFromTximport(txi, coldata, ~condition)
+dds
+```
+
+```{r}
+dds <- DESeq(dds)
+```
+
+```{r}
+vsdata <- vst(dds, blind = FALSE)
+plotPCA(vsdata, intgroup = "condition")
+```
+
+
+```{r}
+library(dplyr)
+# DESeq2 results (AD vs Control)
+res <- results(dds, contrast = c("condition", "AD", "Control"))
+
+DEList <- as.data.frame(res)
+DEList$gene_id <- rownames(DEList)
+
+# Join gene names
+DEList <- DEList %>%
+  left_join(gene_annot, by = "gene_id")
+```
+
+
+```{r}
+res
+```
+
+
+
+```{r}
+sigs <- na.omit(res)
+sigs <- sigs[sigs$padj < 0.05 & sigs$baseMean > 10, ]
+
+sigs
+```
+
+
+
+```{r}
+dir.create("DESeq2_outputs", showWarnings = FALSE)
+write.csv(counts(dds), file = "C:/Users/mahat/OneDrive/Documents/DESeq2_outputs/counts.csv")
+
+```
+
+```{r}
+
+lfc_cutoff <- 1
+
+DEList_sig <- DEList %>%
+  filter(!is.na(padj),
+         padj < 0.05,
+         baseMean > 10,
+         abs(log2FoldChange) >= lfc_cutoff) %>%
+  mutate(
+    diffexpressed = if_else(log2FoldChange > 0, "UP", "DOWN"),
+    foldChange = 2^log2FoldChange
+  )
+
+upregulated_genes <- DEList_sig %>%
+  filter(diffexpressed == "UP") %>%
+  select(gene_id, gene_name, log2FoldChange, foldChange, pvalue, padj, baseMean)
+
+downregulated_genes <- DEList_sig %>%
+  filter(diffexpressed == "DOWN") %>%
+  select(gene_id, gene_name, log2FoldChange, foldChange, pvalue, padj, baseMean)
+
+outdir <- "C:/Users/mahat/OneDrive/Documents/DESeq2_outputs"
+dir.create(outdir, showWarnings = FALSE)
+
+write.csv(upregulated_genes,
+          file = file.path(outdir, "upregulated_genes_AD_vs_Control.csv"),
+          row.names = FALSE)
+
+write.csv(downregulated_genes,
+          file = file.path(outdir, "downregulated_genes_AD_vs_Control.csv"),
+          row.names = FALSE)
+
+
+
+
+```
