@@ -1,0 +1,26 @@
+---
+title: "16s_Data_Arm_Labels"
+author: "Aman Mulla"
+date: "2025-11-11"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+filereport_read_run_PRJEB51982_tsv <- read.delim("filereport_read_run_PRJEB51982_tsv.txt")
+```
+
+```{r}
+accession_arm <- filereport_read_run_PRJEB51982_tsv %>% select(run_accession, sample_title)
+```
+
+```{r}
+write.table(accession_arm, file = "accession_arm.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
+```
+
+
+
