@@ -175,3 +175,9 @@ pseudomapping to transcriptome with Salmon
 **Description:**  
 - Assisted Sofia in debugging ssRead pipeline
 - Began outlining poster
+
+- ## 🗓️ [Date: 2025-11-26]
+**Name:** [Sofia] 
+**Description:**  
+- Finished editing script for ssread UMAP analysis
+- Generated png files with UMAP plots.
