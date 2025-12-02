@@ -160,6 +160,12 @@ pseudomapping to transcriptome with Salmon
 - Downloaded git directory associated with ssread data processing
 ---
 
+## 🗓️ [Date: 2025-11-18]
+**Name:** [Sofia] 
+**Description:**  
+- Read through paper methods and read through identifiers in ssread qsave files to identify correct steps to generate UMAP plots.
+---
+
 ## 🗓️ [Date: 2025-11-23]
 **Name:** [Mahathir] 
 **Description:**  
