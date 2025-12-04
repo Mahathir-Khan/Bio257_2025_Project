@@ -21,9 +21,12 @@ The project focuses on articulating connections between 16s microbiome observati
 ## 🗂️ Repository Structure
 - [Data - Datasets and associated structures that are potential candidates for analysis]
     - Final_Data_Selections.md contains our final dataset choices, accession numbers for chosen samples, and links to associated papers
+    - Graphical_Results folder contains graphical depictions that will be put on final poster
 - [Papers] - Papers with interesting analysis relevant to the project]
     - References_Master_List.md contains all references and sources used for the project     
 - [Code]
     - Contains python code, rmd files, and bash scripts used in project.
 - [Journal Log - Chronologically ordered log of events and updates to project repository]
     - Application_Log.md contains weekly entries from each team member as the semester progressed. 
+- [Powerpoint]
+    - Contains powerpoint presentation outline and will contain final version of poster as ppt file.
