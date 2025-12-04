@@ -48,14 +48,15 @@ head(out)
 ```
 
 ```{r}
+# Creating error model and learn error rates
+# will be utilized will be used to account for error in sampling algorithm
 errF <- learnErrors(filtFs, multithread = TRUE)
 
 errR <- learnErrors(filtRs, multithread = TRUE)
-
-plotErrors(errF, nominalQ = TRUE)
 ```
 
 ```{r}
+# applying core sample inference algorithm (from dada) to filtered and tripmmed 
 dadaFs <- dada(filtFs, err=errF, multithread = TRUE)
 
 dadaRs <- dada(filtRs, err=errR, multithread = TRUE)
@@ -64,19 +65,25 @@ dadaFs[[1]]
 ```
 
 ```{r}
+# aligning and merging all forward and reverse reads
+# provides full denoised sequences
 mergers <- mergePairs(dadaFs, filtFs, dadaRs, filtRs, verbose = TRUE)
 
+# just inspecting first sample merge
 head(mergers[[1]])
 ```
 
 ```{r}
+# Constructing asv table
 seqtab <- makeSequenceTable(mergers)
 dim(seqtab)
 
+# reviewing distribution of sequence lengths
 table(nchar(getSequences(seqtab)))
 ```
 
 ```{r}
+# remove chimeras by combing left and right segments of parents and comaring across reads
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread = TRUE,
                                     verbose = TRUE)
 dim(seqtab.nochim)
@@ -85,6 +92,8 @@ sum(seqtab.nochim)/sum(seqtab)
 ```
 
 ```{r}
+# tracking reads across pipline just to check how things changed
+# as we created asv
 getN <- function(x) sum(getUniques(x))
 track <- cbind(out, sapply(dadaFs, getN), sapply(dadaRs, getN),
                sapply(mergers, getN), rowSums(seqtab.nochim))
@@ -97,6 +106,8 @@ head(track)
 ```
 
 ```{r}
+# reformatting table to dataframe, renaming rows to match out analysis
+# pipeline formatting, and exporting file for analysis
 asv_table <- as.data.frame(seqtab.nochim)
 
 asv_table <- cbind(SampleID = rownames(asv_table), asv_table)
