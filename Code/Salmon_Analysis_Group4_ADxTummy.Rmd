@@ -14,6 +14,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+## load neccessary libraries
 ```{r}
 library(tximport)
 library(ensembldb)
@@ -21,16 +22,17 @@ library(AnnotationHub)
 library(DESeq2)
 ```
 
+
 ```{r}
 hub = AnnotationHub()
 ```
 
+## specifically load query content relevant to humans
 ```{r}
 #make sure to use the right species
 ensdb_query <- query(hub, c("EnsDb", "sapiens", "109"))
 ensdb_query
 ```
-
 ```{r}
 ensdb_109 <- ensdb_query[['AH109606']]
 ```
@@ -44,7 +46,7 @@ tx_data <- transcripts(ensdb_109,
 tx2gene <- as.data.frame(tx_data)[, c("tx_id", "gene_id")]
 tx2gene
 
-# Gene-level annotation table
+# Gene-level annotation table that creates a data fram of gene ids and names
 gene_data <- genes(ensdb_109,
                    columns = c("gene_id", "gene_name"),
                    return.type = "DataFrame")
@@ -58,6 +60,7 @@ gene_annot <- unique(gene_annot)  # remove any duplicates
 
 
 ```{r}
+## pull data from slamon counts generated from trasncriptome mapping
 quants_dir <- "C:/Users/mahat/OneDrive/Desktop/salmon_quants/"
 
 quant_files <- list.files(quants_dir, pattern = "quant.sf$", recursive = TRUE, full.names = TRUE)
@@ -75,14 +78,14 @@ quant_files
 txi <- tximport(quant_files, type = "salmon", tx2gene = tx2gene,ignoreTxVersion = TRUE)
 ```
 
-
+## go through counts with txi
 ```{r}
 txi$counts
 sample_names
 ```
 
 
-
+## factor through condition type. Names were referenced from SRA database and manually typed in.
 ```{r}
 condition <- factor(c("AD","AD","AD","AD","AD","Control","Control","Control","AD","AD","Control","Control"))
 levels = c("Control", "AD") 
@@ -96,6 +99,7 @@ dds <- DESeqDataSetFromTximport(txi, coldata, ~condition)
 dds
 ```
 
+## DESeq!!
 ```{r}
 dds <- DESeq(dds)
 ```
@@ -105,7 +109,7 @@ vsdata <- vst(dds, blind = FALSE)
 plotPCA(vsdata, intgroup = "condition")
 ```
 
-
+## use dplyr after DEseq analysis to filter through data and separate upregulated and downregulated genes
 ```{r}
 library(dplyr)
 # DESeq2 results (AD vs Control)
@@ -124,8 +128,7 @@ DEList <- DEList %>%
 res
 ```
 
-
-
+## filter for statistically significant gene expression changes between AD and control group
 ```{r}
 sigs <- na.omit(res)
 sigs <- sigs[sigs$padj < 0.05 & sigs$baseMean > 10, ]
@@ -155,6 +158,7 @@ DEList_sig <- DEList %>%
     foldChange = 2^log2FoldChange
   )
 
+## output results into two respective CSVs. The chosen columns were sourced from the output of the previous res function. 
 upregulated_genes <- DEList_sig %>%
   filter(diffexpressed == "UP") %>%
   select(gene_id, gene_name, log2FoldChange, foldChange, pvalue, padj, baseMean)
@@ -178,3 +182,4 @@ write.csv(downregulated_genes,
 
 
 ```
+
