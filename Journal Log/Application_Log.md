@@ -176,7 +176,7 @@ pseudomapping to transcriptome with Salmon
 - Produced upregulated_genes_AD_vs_Control.csv (in data folder)
 ---
 
-- ## 🗓️ [Date: 2025-11-18]
+- ## 🗓️ [Date: 2025-11-26]
 **Name:** [Aman] 
 **Description:**  
 - Assisted Sofia in debugging ssRead pipeline
@@ -187,3 +187,10 @@ pseudomapping to transcriptome with Salmon
 **Description:**  
 - Finished editing script for ssread UMAP analysis
 - Generated png files with UMAP plots.
+
+  - ## 🗓️ [Date: 2025-12-5]
+**Name:** [Aman] 
+**Description:**  
+- Created basic graphical summaries for differentially expressed genes based on up and down regulation (in data/Graphical_Results directory)
+- Developed pipeline based on Module 10 to conduct GO and KEGG analysis (in code directory)
+- Based on outputs of GO and KEGG analysis created bubble plots to represent the most signficant biological process, phenotypes, and pathways (in data/Graphical_Results directory)
