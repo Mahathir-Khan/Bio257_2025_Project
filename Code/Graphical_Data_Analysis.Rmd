@@ -1,0 +1,197 @@
+---
+title: "Salmon_Graphical_Analysis"
+author: "Aman Mulla"
+date: "2025-11-30"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# importing libraries
+library(ggplot2)
+library(dplyr)
+library(DESeq2)
+library(gprofiler2)
+library(org.Hs.eg.db)
+library(clusterProfiler)
+library(biomaRt)
+```
+
+```{r}
+# importing data
+counts <- read.csv("counts.csv")
+downreg <- read.csv("downregulated_genes_AD_vs_Control.csv")
+upreg <- read.csv("upregulated_genes_AD_vs_Control.csv")
+```
+
+```{r}
+#top 10 upreg
+upreg_t10 <- upreg %>% arrange(desc(log2FoldChange)) %>% slice_head(n = 10)
+
+#top 10 downreg
+downreg_t10 <- downreg %>% arrange(log2FoldChange) %>% slice_head(n = 10)
+```
+
+```{r}
+#factoring gene_id to preserve order when plotting
+upreg_t10$gene_id <- factor(upreg_t10$gene_id, levels=upreg_t10$gene_id)
+downreg_t10$gene_id <- factor(downreg_t10$gene_id, levels=downreg_t10$gene_id)
+
+#plotting top 10 genes (up and downregulated) based on log_2 fold change
+ggplot(upreg_t10, aes(gene_id, log2FoldChange)) +
+  geom_bar(stat = "identity") +
+  labs(x= "Gene ID", y = "Fold Change (log_2)", title = "Fold Change Across Genes") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        plot.title = element_text(hjust = .5)) 
+  
+ggplot(downreg_t10, aes(gene_id, log2FoldChange)) +
+  geom_bar(stat = "identity") +
+  labs(x= "Gene ID", y = "Fold Change (log_2)", title = "Fold Change Across Genes") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        plot.title = element_text(hjust = .5)) 
+```
+
+```{r}
+# Gene ontology
+# creating function to run gene ontology and create bubble plot
+# based on gene ids
+downRegulated_ids <- read.table("downregulated_genes_AD_vs_Control.csv",
+                                header = TRUE,
+                                stringsAsFactors = FALSE)$gene_id
+
+upRegulated_ids <- read.table("upregulated_genes_AD_vs_Control.csv",
+                                header = TRUE,
+                                stringsAsFactors = FALSE)$gene_id
+run_geneOntology <- function(gene_ids) {
+  enrichment <- gost(query = gene_ids, organism = "hsapiens", significant = TRUE)$result %>% 
+    filter(p_value < 0.05) %>%
+    mutate(enrichment_ratio = (intersection_size * effective_domain_size) / (query_size * term_size)) %>%
+    arrange(enrichment_ratio) %>%
+    head(10)
+  
+  ggplot(enrichment, aes(x=enrichment_ratio, y = reorder(term_name, enrichment_ratio), size = intersection_size, color = p_value)) +
+    geom_point() +
+    scale_size_continuous(range = c(3,10)) +
+    labs(x = "Enrichment Ratio", y = "GO Term", size = "Intersection Size", color = "p-value") +
+    theme_minimal() +
+    theme(axis.text.y = element_text(size = 10), plot.title = element_text(hjust = 0.5))
+}
+```
+
+```{r}
+# running function to create plots for up and down regulated
+png("Downregulated_GO_Terms.png", width = 800, height = 6000, units = "px", res = 150)
+run_geneOntology(downRegulated_ids)
+dev.off()
+
+png("Upregulated_GO_Terms.png", width = 800, height = 6000, units = "px", res = 150)
+run_geneOntology(upRegulated_ids)
+dev.off()
+```
+
+```{r}
+# creating a single list of differentially expressed genes with valid p-values
+DEList <- rbind(upreg, downreg)
+DEList <- DEList[DEList$padj <= 0.05,]
+```
+
+```{r}
+# creating a data.frame with ensemble id and entrez id
+# utilized dataframe to add entrez id's to DEList via merge
+gene_conversion <- bitr(
+  DEList$gene_id,
+  fromType = "ENSEMBL",
+  toType = "ENTREZID",
+  OrgDb = org.Hs.eg.db
+)
+
+DE_Entrez <- merge(
+  DEList,
+  gene_conversion,
+  by.x = "gene_id",
+  by.y = "ENSEMBL"
+)
+```
+
+```{r}
+# running enrichGO for biological processes
+# storing results in concise GO table with p-values <= 0.05
+go_results <- enrichGO(gene = DE_Entrez$ENTREZID,
+                       OrgDb = org.Hs.eg.db,
+                       ont = "BP", #BP = Bio Proc, MF = Mol Func, 
+                       # CC = Cell Comp
+                       pAdjustMethod = "BH",
+                       pvalueCutoff = 0.05,
+                       qvalueCutoff = 0.2,
+                       readable = TRUE)
+
+readable_GO <- data.frame(GO_ID = go_results@result$ID,
+                          Description = go_results@result$Description,
+                          p.adjust = go_results@result$p.adjust,
+                          Count = go_results@result$Count)
+
+readable_GO[readable_GO$p.adjust <= 0.051,]
+```
+
+```{r}
+# running KEG analysis with enrichKEGG
+# converting returned file into a readable form
+# analyzing KEGG_pathways based on adjusted p-value
+# no p-adj <= 0.05
+kegg_results <- enrichKEGG(
+  gene = DE_Entrez$ENTREZID,
+  organism = "hsa",
+  pvalueCutoff = 0.05)
+
+kegg_results <- setReadable(
+  kegg_results,
+  OrgDb = org.Hs.eg.db,
+  keyType = "ENTREZID"
+)
+
+kegg_sig <- kegg_results@result[kegg_results@result$p.adjust <= 0.9,]
+
+kegg_sig
+```
+
+```{r}
+# since on p-adj <= 0.05 so just bubble plotting top 10 pathways based on p-values
+# given p-values themselves generally <= 0.05 able to at least make 
+# exploratory claims
+
+kegg_top10 <- kegg_results@result[order(kegg_results@result$pvalue),][1:10,]
+
+kegg_top10$GeneRatio_num <- sapply(
+  strsplit(kegg_top10$GeneRatio, "/"),
+  function(x) as.numeric(x[1]) / as.numeric(x[2])
+)
+
+png("KEGG_Bubble_Plot.png", width = 800, height = 600, units = "px", res = 150)
+ggplot(kegg_top10,
+       aes(x = GeneRatio_num,
+           y = reorder(Description, GeneRatio_num),
+           size = Count,
+           color = p.adjust)) +
+  geom_point() +
+  scale_size_continuous(name = "Gene count") +
+  scale_color_gradient(name = "Adjusted p-value (FDR)",
+                       low = "blue",
+                       high = "red") +
+  labs(
+    x = "Gene Ratio",
+    y = "KEGG Pathway",
+    title = "Top 10 KEGG Pathways (by p-value)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 10),
+    plot.title = element_text(hjust = 0.5)
+  )
+dev.off()
+```
+
