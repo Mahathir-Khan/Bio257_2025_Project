@@ -188,7 +188,7 @@ pseudomapping to transcriptome with Salmon
 - Finished editing script for ssread UMAP analysis
 - Generated png files with UMAP plots.
 
-  - ## 🗓️ [Date: 2025-12-5]
+- ## 🗓️ [Date: 2025-12-5]
 **Name:** [Aman] 
 **Description:**  
 - Created basic graphical summaries for differentially expressed genes based on up and down regulation (in data/Graphical_Results directory)
