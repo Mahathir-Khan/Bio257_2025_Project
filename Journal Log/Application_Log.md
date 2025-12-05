@@ -198,4 +198,5 @@ pseudomapping to transcriptome with Salmon
 - ## 🗓️ [Date: 2025-12-5]
 **Name:** [Sofia] 
 **Description:**  
-- Fixed UMAP plot for cell types to make sure labels are spread out. Uploaded code for R script as run_umap.Rmd in /Code and uploaded plots for celltype and condition as UMAP_celltype2.png and UMAP_condition.png in /Data
+- Fixed UMAP plot for cell types to make sure labels are spread out.
+- Uploaded code for R script as run_umap.Rmd in /Code and uploaded plots for celltype and condition as UMAP_celltype2.png and UMAP_condition.png in /Data
