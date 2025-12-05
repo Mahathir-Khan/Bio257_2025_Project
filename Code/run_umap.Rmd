@@ -79,7 +79,7 @@ rm(combined_controls, combined_disease); gc()
 combined <- NormalizeData(combined) # log-normalized counts
 combined <- FindVariableFeatures(combined) # identify genes with highest variability
 combined <- ScaleData(combined) # scale/center
-combined <- RunPCA(combined) # run pca analyssi
+combined <- RunPCA(combined) # run pca analysis
 
 # Harmony batch correction
 combined <- RunHarmony(combined, group.by.vars="orig.ident")
