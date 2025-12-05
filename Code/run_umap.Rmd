@@ -1,0 +1,107 @@
+---
+title: "ssREAD download"
+author: "Sofia Kaplan"
+date: "2025-11-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r libraries}
+
+setwd("/scratch/bio257_2025/Users/group4_ADxTummy/RNAseq_data/ssread/ssread_files")
+
+
+# load libraries
+
+library(qs) # read/writing for seurat objects
+library(Seurat) # analysis tools for single cell RNA seq data
+library(ggplot2) # for plots
+library(harmony) # for batch correction
+library(ggrepel) # for plot label formatting to prevent overlap
+
+# Function to preprocess a single sample
+preprocess_sample <- function(file, label){
+  message("Loading: ", file) # print status for file
+  obj <- qread(file) # read seurat object
+
+  sample_id <- tools::file_path_sans_ext(basename(file))
+
+  # metadata
+  obj$orig.ident <- sample_id # store sample id for batch correction
+  obj$condition  <- label # assign label as control or disease
+
+  # unique names
+  obj <- RenameCells(obj, add.cell.id = sample_id)
+
+  return(obj)
+}
+
+# load each batch
+preprocess_batch <- function(files, label, batch_size=2){
+  # split files into groups by batch size of 2
+  batches <- split(files, ceiling(seq_along(files)/batch_size))
+  # process each batch
+  batch_objs <- lapply(batches, function(batch){
+    objs <- lapply(batch, preprocess_sample, label=label)
+    # merge into single object
+    Reduce(merge, objs)
+  })
+
+  Reduce(merge, batch_objs)
+}
+
+# Split file lists for each condition
+control_files <- c("AD04401.qsave","AD04403.qsave","AD04501.qsave","AD04503.qsave","AD04601.qsave","AD04603.qsave")
+disease_files <- c("AD04402.qsave","AD04404.qsave","AD04502.qsave","AD04504.qsave","AD04602.qsave","AD04604.qsave")
+
+
+# Process controls and disease
+combined_controls <- preprocess_batch(control_files, "Control", batch_size=2)
+gc() # clean memory
+
+combined_disease <- preprocess_batch(disease_files, "Disease", batch_size=2)
+gc() # clean memory
+
+# Merge controls + disease
+combined <- merge(combined_controls, combined_disease)
+rm(combined_controls, combined_disease); gc()
+
+# seurat processing
+combined <- NormalizeData(combined) # log-normalized counts
+combined <- FindVariableFeatures(combined) # identify genes with highest variability
+combined <- ScaleData(combined) # scale/center
+combined <- RunPCA(combined) # run pca analyssi
+
+# Harmony batch correction
+combined <- RunHarmony(combined, group.by.vars="orig.ident")
+
+# UMAP
+combined <- RunUMAP(combined, reduction="harmony", dims=1:25)
+
+# Save combined object
+qsave(combined, "combined_preprocessed.qsave")
+
+# Save UMAP plots
+p_condition <- DimPlot(combined, group.by="condition", pt.size=0.3)
+ggsave("UMAP_condition.png", plot=p_condition, width=8, height=6)
+
+# Only plot predicted.id if it exists
+if ("predicted.id" %in% colnames(combined@meta.data)) {
+    p_celltype <- DimPlot(combined, group.by="predicted.id", label=TRUE, pt.size=0.3, repel = TRUE)
+    ggsave("UMAP_celltype.png", plot=p_celltype, width=12, height=10, dpi = 300)
+} else {
+    message("predicted.id not found — skipping cell type UMAP.")
+}
+
+
+```
+
