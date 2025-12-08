@@ -58,5 +58,4 @@
     *Summary of clinical and biological aspects of AD for contextual reference.*
 
 20. [Revealing excitation-inhibition imbalance in Alzheimer’s disease using multiscale neural model inversion of resting-state functional MRI](https://www.nature.com/articles/s41593-024-01730-3)
-
     *Addresses role of Oligodendrocytes in Alzheimer's*
