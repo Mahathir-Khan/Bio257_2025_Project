@@ -56,3 +56,6 @@
 
 19. [National Institute on Aging – Alzheimer’s Disease Fact Sheet](https://www.nia.nih.gov/health/alzheimers-and-dementia/alzheimers-disease-fact-sheet)  
     *Summary of clinical and biological aspects of AD for contextual reference.*
+
+20. [Revealing excitation-inhibition imbalance in Alzheimer’s disease using multiscale neural model inversion of resting-state functional MRI](https://www.nature.com/articles/s41593-024-01730-3)
+    *Addresses role of Oligodendrocytes in Alzheimer's*
