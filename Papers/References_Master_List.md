@@ -61,3 +61,5 @@
     *Addresses role of Oligodendrocytes in Alzheimer's*
 21. [2024 Alzheimer's disease facts and figures](https://pubmed.ncbi.nlm.nih.gov/38689398/)
     *Statistics about AD prevalence* 
+22.  [Inflammasome in Alzheimer's Disease and Potential Therapeutic Targets. Frontiers in pharmacology](https://doi.org/10.3389/fphar.2022.845185)
+    *NLRP3 inflammasome role in AD* 
