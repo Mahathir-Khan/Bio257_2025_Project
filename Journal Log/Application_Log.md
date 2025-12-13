@@ -195,6 +195,12 @@ pseudomapping to transcriptome with Salmon
 - Developed pipeline based on Module 10 to conduct GO and KEGG analysis (in code directory)
 - Based on outputs of GO and KEGG analysis created bubble plots to represent the most signficant biological process, phenotypes, and pathways (in data/Graphical_Results directory)
 
+**Name:** [Mahathir] 
+**Description:**  
+- Completed Header, limitations, Future Directions, References, and Aknowledgements section of poster. Also assited with formatting of Methods and introduction section
+- Cleaned up Papers directory in Github and added additional sources.
+- Finalized Github README page.
+
 - ## 🗓️ [Date: 2025-12-5]
 **Name:** [Sofia] 
 **Description:**  
